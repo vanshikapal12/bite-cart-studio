@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
 import CategoryFilter from "@/components/CategoryFilter";
 import FoodCard from "@/components/FoodCard";
@@ -7,7 +8,7 @@ import CartSidebar from "@/components/CartSidebar";
 import { foodItems, type Category } from "@/data/foodItems";
 import { useCart } from "@/hooks/useCart";
 
-const Index = () => {
+const Products = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<Category | null>(null);
   const [cartOpen, setCartOpen] = useState(false);
@@ -25,13 +26,11 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar cartCount={cart.totalItems} onCartClick={() => setCartOpen(true)} />
 
-      <main className="container mx-auto px-4 py-8">
-        {/* Hero */}
+      <main className="container mx-auto px-4 py-10">
+        {/* Header */}
         <div className="mb-10">
           <h1 className="font-display text-4xl font-bold leading-tight md:text-5xl">
-            Delicious food,
-            <br />
-            <span className="text-primary">delivered fast.</span>
+            Our Menu
           </h1>
           <p className="mt-3 max-w-md text-muted-foreground">
             Browse our curated menu and get your favorites delivered to your door in minutes.
@@ -61,6 +60,7 @@ const Index = () => {
         )}
       </main>
 
+      <Footer />
       <CartSidebar
         open={cartOpen}
         onClose={() => setCartOpen(false)}
@@ -73,4 +73,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Products;
