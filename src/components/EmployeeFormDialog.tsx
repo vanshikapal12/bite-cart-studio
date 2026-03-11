@@ -21,7 +21,7 @@ const emptyForm = {
   designation: "",
   salary: "",
   joinDate: "",
-  status: "Active" as const,
+  status: "Active" as "Active" | "Inactive",
 };
 
 const DEPARTMENTS = ["Engineering", "Marketing", "HR", "Finance", "Design", "Operations", "Sales"];

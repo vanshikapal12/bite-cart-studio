@@ -61,7 +61,7 @@ const EmployeeDashboard = () => {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Navbar cartCount={cart.totalItems} onCartClick={() => setCartOpen(true)} />
-      <CartSidebar open={cartOpen} onClose={() => setCartOpen(false)} cart={cart} />
+      <CartSidebar open={cartOpen} onClose={() => setCartOpen(false)} items={cart.items} totalPrice={cart.totalPrice} onRemove={cart.removeItem} onUpdateQuantity={cart.updateQuantity} />
 
       <main className="container mx-auto flex-1 px-4 py-8">
         {/* Header */}
