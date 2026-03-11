@@ -10,6 +10,7 @@ interface NavbarProps {
 const links = [
   { to: "/", label: "Home" },
   { to: "/products", label: "Products" },
+  { to: "/employees", label: "Employees" },
   { to: "/about", label: "About" },
 ];
 
